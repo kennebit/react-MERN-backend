@@ -83,6 +83,8 @@ const userRenewToken = async (req, res = express.response) => {
     const token = await createToken(uid, name);
     res.status(200).json({
         ok: true,
+        uid,
+        name,
         token
     });
 }

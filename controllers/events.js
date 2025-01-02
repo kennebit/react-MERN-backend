@@ -5,6 +5,7 @@ const Event = require('../models/EventMode');
 const eventsGet = async (req, res = express.response) => {
     const ini = new Date().getTime();
     const eventsList = await Event
+        // .find({ user: req.uid })
         .find()
         .populate('user', 'name');
     const inif = new Date().getTime() - ini;
